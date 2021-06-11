@@ -1,0 +1,50 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+
+block_cipher = None
+
+
+a = Analysis(['yt_downloader.py'],
+             pathex=['D:\\Programiranje\\MojeSkripte\\YTDownloader\\Working'],
+             binaries=[],
+             datas=[],
+             hiddenimports=['scipy._lib.messagestream', 'numpy', 'tkinter', 'scipy', 'matplotlib', 'fixtk', 'scipy.signal', 'scipy.signal.bsplines', 'scipy.special', 'scipy.special._ufuncs_cxx',
+                        'scipy.linalg.cython_blas',
+                        'scipy.linalg.cython_lapack',
+                        'scipy.integrate',
+                        'scipy.integrate.quadrature',
+                        'scipy.integrate.odepack',
+                        'scipy.integrate._odepack',
+                        'scipy.integrate.quadpack',
+                        'scipy.integrate._quadpack',
+                        'scipy.integrate._ode',
+                        'scipy.integrate.vode',
+                        'scipy.integrate._dop', 'scipy._lib', 'scipy._build_utils','scipy.__config__',
+                        'scipy.integrate.lsoda', 'scipy.cluster', 'scipy.constants','scipy.fftpack','scipy.interpolate','scipy.io','scipy.linalg','scipy.misc','scipy.ndimage','scipy.odr','scipy.optimize','scipy.setup','scipy.sparse','scipy.spatial','scipy.special','scipy.stats','scipy.version'],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          [],
+          exclude_binaries=True,
+          name='yt_downloader',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          console=False)
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               upx_exclude=[],
+               name='yt_downloader')
